@@ -22,11 +22,11 @@ export async function decrypt(input: string): Promise<any> {
 
 export async function login(formData: FormData) {
     const email = formData.get("email");
-    const user = {email: formData.get("email"), name: "Alexsey"}
+    const user = {email: formData.get("email"), name: "Nikolas"}
 
     if (email === "admin@gmail.com") {
         console.log("Correct email");
-        const user = {email, name: "Alexsey"};
+        const user = {email, name: "Nikolas"};
         const expires = new Date(Date.now() + 10 * 1000);
         const session = await encrypt({ user, expires});
         cookies().set("session", session, { expires, httpOnly: true });
